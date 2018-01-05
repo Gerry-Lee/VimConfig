@@ -1,2 +1,2 @@
 # VimConfig
-vim config
+This is for linux kernel
