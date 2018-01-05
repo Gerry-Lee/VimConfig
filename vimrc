@@ -64,7 +64,7 @@ set cindent
 " 允许折叠
 set foldenable       
 " 基于缩进或语法进行代码折叠
-set foldmethod=indent   " 更多的缩进表示更高级别的折叠  
+"set foldmethod=indent   " 更多的缩进表示更高级别的折叠  
 set foldmethod=syntax
 " Tab键的宽度
 set tabstop=4
@@ -763,40 +763,6 @@ set viminfo+=!
 let g:mwAutoLoadMarks = 1
 let g:mwAutoSaveMarks = 0
 
-" YouCompleteMe
-"let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
-" 让Vim的补全菜单行为与一般IDE一致
-"set completeopt+=longest,menu
-" 补全内容不以分割子窗口形式出现，只显示补全列表
-"set completeopt-=preview
-" YCM 补全菜单配色
-"highlight Pmenu ctermfg=2 ctermbg=3 guifg=#D3D3D3 guibg=#005555
-" YCM选中项配色
-"highlight PmenuSel ctermfg=2 ctermbg=3 guifg=#D3D3D3 guibg=#004444
-" 设置在下面几种格式的文件上屏蔽ycm
-"let g:ycm_filetype_blacklist = {
-"      \ 'tagbar' : 1,
-"      \ 'nerdtree' : 1,
-"      \}
-
-" 允许 vim 加载 .ycm_extra_conf.py 文件，不再提示
-"let g:ycm_confirm_extra_conf=0
-"注释和字符串中的文字也会被收入补全
-"let g:ycm_collect_identifiers_from_comments_and_strings = 0
-"在字符串输入中也能补全
-"let g:ycm_complete_in_strings = 1
-" 补全功能在注释中同样有效
-"let g:ycm_complete_in_comments=1
-
-" 从第2个键入字符就开始罗列匹配项
-"let g:ycm_min_num_of_chars_for_completion=2
-" 禁止缓存匹配项，每次都重新生成匹配项
-"let g:ycm_cache_omnifunc=0
-" 语法关键字补全
-"let g:ycm_seed_identifiers_with_syntax=1
-
-" 开启 YCM 标签补全引擎
-"let g:ycm_collect_identifiers_from_tags_files=1
 " 引入 C++ 标准库tags
 "set tags+=/data/misc/software/misc./vim/stdcpp.tags
 
@@ -847,8 +813,8 @@ command! -nargs=? -range=% RetabIndent call IndentConvert(<line1>,<line2>,&et,<q
 "let Tlist_Exit_OnlyWindow = 1
 "let Tlist_Process_File_Always = 1
 " 设置tags  
-"set tags=tags;  
-"set tags+=/usr/include/tags;
+set tags=tags;  
+set tags+=/usr/include/tags;
 "set autochdir 
 "let Tlist_Ctags_Cmd = '/usr/bin/ctags'
 " 默认打开Taglist
