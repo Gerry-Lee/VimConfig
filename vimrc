@@ -646,7 +646,7 @@ let tagbar_left=1
 " 设置显示／隐藏标签列表子窗口的快捷键。速记：identifier list by tag
 nnoremap <Leader>ilt :TagbarToggle<CR>
 " 设置标签子窗口的宽度
-let tagbar_width=32
+let tagbar_width=30
 " tagbar 子窗口中不显示冗余帮助信息
 let g:tagbar_compact=1
 " 自动聚焦
@@ -690,12 +690,12 @@ let g:tagbar_type_cpp = {
 " airline
 "这个是安装字体后 必须设置此项"
 let g:airline_powerline_fonts = 1
-"let g:airline_theme='base16_solarized'
-"let g:airline_detect_modified=1
-"let g:airline_detect_paste=1
-"let g:airline_inactive_collapse=0
-"let g:airline_detect_spell=0
-"let g:airline_detect_crypt=1
+let g:airline_theme='base16_solarized'
+let g:airline_detect_modified=1
+let g:airline_detect_paste=1
+let g:airline_inactive_collapse=0
+let g:airline_detect_spell=0
+let g:airline_detect_crypt=1
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -714,7 +714,7 @@ endif
 "let g:airline_right_alt_sep = '|'
 
 " airline自有插件
-"let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#branch#enabled = 1
 "let g:airline#extensions#branch#vcs_priority = ["git"]
 "let g:airline#extensions#branch#format = 1
 
