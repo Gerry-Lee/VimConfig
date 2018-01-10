@@ -732,7 +732,7 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 nnoremap <C-Left> :bp<CR>
 nnoremap <C-Right> :bn<CR>
 
-"let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#whitespace#enabled = 0
 "let g:airline#extensions#virtualenv#enabled = 1
 "let g:airline#extensions#capslock#enabled = 1
 "
