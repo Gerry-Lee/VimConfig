@@ -407,7 +407,7 @@ set mouse-=a
 " 不自动换行
 set nowrap
 " 一行到80个字符时就自动换行
-set textwidth=80
+"set textwidth=80
 "允许区域选择
 set selection=exclusive
 "set selectmode=mouse,key
