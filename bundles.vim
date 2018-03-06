@@ -56,7 +56,6 @@ Plugin 'VundleVim/Vundle.vim'
 " Code Completions
 "------------------
 Plugin 'ervandew/supertab'
-"Plugin 'Valloric/YouCompleteMe'
 "--------------
 " Fast editing
 "--------------

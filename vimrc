@@ -553,6 +553,7 @@ let NERDTreeIgnore=['\.pyc']
 let g:SuperTabRetainCompletionType=2
 let g:SuperTabMappingForward = "<tab>"
 let g:SuperTabMappingBackward= "<s-tab>"
+let g:SuperTabDefaultCompletionType="<C-X><C-O>"
 
 "cscope.vim
 if has("cscope") && filereadable("/usr/local/bin/cscope")
@@ -569,6 +570,10 @@ if has("cscope") && filereadable("/usr/local/bin/cscope")
        cs add $CSCOPE_DB
     endif
     set csverb
+    
+    
+    "set cscopequickfix=s+,c+,d+,i+,t+,e+
+    set cscopequickfix=s-,c-,d-,i-,t-,e-
  
     cnoreabbrev csa cs add
     cnoreabbrev csf cs find
