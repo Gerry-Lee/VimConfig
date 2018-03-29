@@ -1,5 +1,5 @@
 "
-"au FileType php setlocal dict+=~/.vim/dict/php_funclist.dict
+"AU fileType php setlocal dict+=~/.vim/dict/php_funclist.dict
 "au FileType css setlocal dict+=~/.vim/dict/css.dict
 "au FileType c setlocal dict+=~/.vim/dict/c.dict
 "au FileType cpp setlocal dict+=~/.vim/dict/cpp.dict
@@ -60,9 +60,9 @@ set smartindent
 "使用C样式的缩进  
 set cindent
 " 启动 vim 时关闭折叠代码
-"set nofoldenable
+set nofoldenable
 " 允许折叠
-set foldenable       
+"set foldenable       
 " 基于缩进或语法进行代码折叠
 "set foldmethod=indent   " 更多的缩进表示更高级别的折叠  
 set foldmethod=syntax
@@ -232,6 +232,9 @@ nmap <C-F11> :!cscope -bRq<cr>
 nmap <C-F12> :!ctags -R --c-kinds=+l+x+p --fields=+lS -I __THROW,__nonnull --extra=+ .<cr>
 "代码格式优化化
 map <F7> :call FormartSrc()<CR><CR>
+
+nmap <F8> :copen<cr>
+nmap <F9> :cclose<cr>
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
@@ -556,8 +559,8 @@ let g:SuperTabMappingBackward= "<s-tab>"
 let g:SuperTabDefaultCompletionType="<C-X><C-O>"
 
 "cscope.vim
-if has("cscope") && filereadable("/usr/local/bin/cscope")
-    set csprg=/usr/local/bin/cscope
+if has("cscope") && filereadable("/usr/bin/cscope")
+    set csprg=/usr/bin/cscope
     set csto=1
     set cst
     set nocsverb
@@ -842,3 +845,32 @@ set tags+=/usr/include/tags;
 "不同时显示多个文件的tag，只显示当前文件的
 "let Tlist_Show_One_File=1            
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"let g:AutoSessionFile='$VIM/vim-session.vim'
+"if filereadable(g:AutoSessionFile)
+"    if argc() == 0
+"        autocmd VimEnter * call RestoreSess()
+"        "au VimLeave * call LeaveHandler()
+"    endif
+"endif
+
+"保存，载入session
+fu! SaveSess()
+    set sessionoptions-=curdir
+    set sessionoptions+=sesdir
+    set sessionoptions+=slash
+    set sessionoptions+=unix
+    set sessionoptions+=buffers,curdir,resize,folds,tabpages
+    "set sessionoptions-=options
+    execute 'mksession! $VIM/vim-session.vim'
+    "execute 'wviminfo! $currProject.viminfo'
+endfunction
+
+fu! RestoreSess()
+    execute 'source $VIM/vim-session.vim'
+    "execute 'rviminfo $currProject.viminfo'
+endfunction
+
+"最后处理session
+"autocmd VimLeave * call SaveSess()
+"autocmr VimEnter * call RestoreSess()
