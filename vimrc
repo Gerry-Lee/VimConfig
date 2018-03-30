@@ -60,9 +60,9 @@ set smartindent
 "使用C样式的缩进  
 set cindent
 " 启动 vim 时关闭折叠代码
-set nofoldenable
+"set nofoldenable
 " 允许折叠
-"set foldenable       
+set foldenable       
 " 基于缩进或语法进行代码折叠
 "set foldmethod=indent   " 更多的缩进表示更高级别的折叠  
 set foldmethod=syntax
