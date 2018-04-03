@@ -199,7 +199,7 @@ cnoreabbrev vimreload so $HOME/.vimrc
 """""""""""""""""""""""""""""""""""""""""
 
 " 定义前缀键
-let mapleader=";"
+let mapleader=","
 
 " 定义快捷键到行首和行尾
 "nmap LB 0
@@ -228,13 +228,13 @@ nmap <F5> :TagbarToggle<cr>
 nmap <F6> :NERDTreeToggle<cr>
 nmap <F3> :GundoToggle<cr>
 nmap <F4> :IndentGuidesToggle<cr>
-nmap <C-F11> :!cscope -bRq<cr>
-nmap <C-F12> :!ctags -R --c-kinds=+l+x+p --fields=+lS -I __THROW,__nonnull --extra=+ .<cr>
+"nmap <C-F11> :!cscope -bRq<cr>
+"nmap <C-F12> :!ctags -R --c-kinds=+l+x+p --fields=+lS -I __THROW,__nonnull --extra=+ .<cr>
 "代码格式优化化
-map <F7> :call FormartSrc()<CR><CR>
+map <F10> :call FormartSrc()<CR><CR>
 
-nmap <F8> :copen<cr>
-nmap <F9> :cclose<cr>
+nmap <F7> :copen<cr>
+nmap <F8> :cclose<cr>
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
