@@ -147,40 +147,37 @@ func SetTitle()
         call append(line("."),"# encoding: utf-8")
 	    call append(line(".")+1, "")
 	    call append(line(".")+2, "") 
-
 "    elseif &filetype == 'mkd'
 "        call setline(1,"<head><meta charset=\"UTF-8\"></head>")
 	else 
-		call setline(1, "/*************************************************************************") 
-		call append(line("."), "	> File Name: ".expand("%")) 
-		call append(line(".")+1, "	> Author: Gerry Lee") 
-		call append(line(".")+2, "	> Mail: gerrylee1993@gmail.com") 
-		call append(line(".")+3, "	> Created Time: ".strftime("%c")) 
-		call append(line(".")+4, " ************************************************************************/") 
-		call append(line(".")+5, "")
-		call append(line(".")+6, "")
+		"call setline(1, "/*************************************************************************") 
+		call setline(1, "") 
+		"call append(line("."), "	> File Name: ".expand("%")) 
+		"call append(line(".")+1, "	> Author: Gerry Lee") 
+		"call append(line(".")+2, "	> Mail: gerrylee1993@gmail.com") 
+		"call append(line(".")+3, "	> Created Time: ".strftime("%c")) 
+		"call append(line(".")+4, " ************************************************************************/") 
 	endif
 	if expand("%:e") == 'cpp'
-		call append(line(".")+6, "#include <iostream>")
-		call append(line(".")+7, "using namespace std;")
-		call append(line(".")+8, "")
-		call append(line(".")+9, "")
+		call append(line("."), "#include <iostream>")
+		call append(line(".")+1, "using namespace std;")
+		call append(line(".")+2, "")
+		call append(line(".")+3, "")
 	endif
 	if &filetype == 'c'
-		call append(line(".")+6, "#include <stdio.h>")
-		call append(line(".")+7, "#include <stdlib.h>")
-		call append(line(".")+8, "")
-		call append(line(".")+9, "")
+		call append(line("."), "#include <stdio.h>")
+		call append(line(".")+1, "")
+		call append(line(".")+2, "")
 	endif
 	if expand("%:e") == 'h'
-		call append(line(".")+6, "#ifndef _".toupper(expand("%:r"))."_H")
-		call append(line(".")+7, "#define _".toupper(expand("%:r"))."_H")
-		call append(line(".")+8, "#endif")
+		call append(line("."), "#ifndef _".toupper(expand("%:r"))."_H")
+		call append(line(".")+1, "#define _".toupper(expand("%:r"))."_H")
+		call append(line(".")+2, "#endif")
 	endif
 	if &filetype == 'java'
-		call append(line(".")+6,"public class ".expand("%:r"))
-		call append(line(".")+7,"")
-		call append(line(".")+8,"")
+		call append(line("."),"public class ".expand("%:r"))
+		call append(line(".")+1,"")
+		call append(line(".")+2,"")
 	endif
 	"新建文件后，自动定位到文件末尾
 endfunc 
@@ -634,7 +631,7 @@ set undodir=~/.undo_history/
 " 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
 nmap <Leader>fl :NERDTreeToggle<CR>
 " 设置NERDTree子窗口宽度
-let NERDTreeWinSize=25
+let NERDTreeWinSize=30
 " 设置NERDTree子窗口位置
 let NERDTreeWinPos="right"
 " 显示隐藏文件
@@ -648,6 +645,7 @@ let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
 let NERDTreeShowBookmarks=1
 let NERDTreeRespectWildIgnore=1
 let NERDTreeMinimalUI=1
+let g:NERDTreeShowLineNumbers=1
 
 " Tagbar
 ""设置tagbar使用的ctags的插件,必须要设置对
